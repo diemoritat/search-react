@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import '../Header.css';
-
-const fetchUrl = username => `https://api.github.com/users/${username}`
+import ReactDOM from 'react-dom';
+import User from './User';
 
 class Header extends Component {
   constructor(props) {
@@ -23,12 +22,11 @@ class Header extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    fetch(fetchUrl(this.state.value))
+    fetch(`https://api.github.com/users/${this.state.value}`)
       .then(response => {
         if (!response.ok) {
           throw Error("Network request failed")
         }
-
         return response
       })
       .then(data => data.json())
@@ -37,11 +35,13 @@ class Header extends Component {
           githubData: data
         });
         console.log(data);
+
+        ReactDOM.render(<User data={this.state.githubData} />, document.getElementById('content__container'));
       }, () => {
         this.setState({
           requestFailed: true
         })
-      })
+    })
   }
 
   render() {
