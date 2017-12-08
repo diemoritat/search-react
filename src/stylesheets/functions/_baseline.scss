@@ -1,0 +1,24 @@
+// Baseline
+//
+// The `baseline()` is the vertical / y-axis unit of measurement:
+//
+// ```
+// margin-bottom: baseline(2);
+// padding-bottom: baseline(1);
+// ```
+//
+// `baseline()` is only used for properties dealing with the y-axis.
+//
+// For properties such as `margin-right`/`margin-left` or for adding space on the x-axis, please refer to the `space()` mixin:
+//
+// ```
+// /webpack/source/core/scss/functions/_space.scss
+// ```
+//
+// Style guide: Functions.baseline
+
+$baselineUnit: 0.75rem; // 12px
+
+@function baseline($multiplier: 1) {
+  @return $baselineUnit * $multiplier;
+}

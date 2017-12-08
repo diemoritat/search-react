@@ -1,5 +1,52 @@
 .user {
   width: 100%;
   position: relative;
+  background-color: #fff;
   box-shadow: 2px 2px 5px 0px #E0E0E0;
+  display: grid;
+  grid-template-columns: 30% 70%;
+
+  &__image {
+    grid-column: 1;
+    display: inline-block;
+
+    img{
+      max-width: 100%;
+      height: auto;
+      margin-top: baseline(-1);
+      margin-left: baseline(-1);
+      margin-bottom: baseline(-1.5);
+      border-radius: baseline(1);
+      box-shadow: 2px 2px 5px 0px #E0E0E0;
+    }
+  }
+
+  &__info {
+    grid-column: 2;
+    display: inline-block;
+    margin-left: baseline(1);
+    padding: baseline(2);
+
+    &--top {
+      text-align: center;
+    }
+
+    &--bottom {
+      text-align: justify;
+    }
+  }
+
+  &__name {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+    padding-bottom: baseline(1);
+  }
+
+  &__divider {
+    width: 50%;
+    height: 1px;
+    display: block;
+    background-color: #e2e2e2;
+    margin: 20px auto 25px;
+  }
 }

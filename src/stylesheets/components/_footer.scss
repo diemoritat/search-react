@@ -1,6 +1,9 @@
-.footer {
+.footer__copyright {
+  background-color: #fff;
   text-align: center;
-  width: 100%;
-  padding: 20px 0;
-  flex: 1;
+  padding: baseline(2) 0;
+
+  p {
+    font-size: .8rem;
+  }
 }

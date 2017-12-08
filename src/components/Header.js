@@ -47,12 +47,12 @@ class Header extends Component {
   render() {
     return (
       <div className="search_container">
-        <form onSubmit={this.handleSubmit}>
+        <form className="search_container__form" onSubmit={this.handleSubmit}>
           <label>
-            Search:
-            <input type="text" name="username" value={this.state.value} onChange={this.handleChange} />
+            <span className="search_container__label"> FindHub </span>
+            <input type="text" name="username" className="search_container__input" value={this.state.value} onChange={this.handleChange} />
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" className="search_container__submit" />
         </form>
       </div>
     );
