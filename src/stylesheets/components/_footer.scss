@@ -1,9 +1,14 @@
-.footer__copyright {
+.footer {
+  width: 100%;
   background-color: #fff;
-  text-align: center;
-  padding: baseline(2) 0;
+  margin-top: baseline(2);
 
-  p {
-    font-size: .8rem;
+  &__copyright {
+    text-align: center;
+    padding: baseline(2) 0;
+
+    p {
+      font-size: .8rem;
+    }
   }
 }

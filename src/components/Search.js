@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import User from './User';
+import searchIcon from '../images/search.svg';
 
-class Header extends Component {
+class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,7 +37,7 @@ class Header extends Component {
         });
         console.log(data);
 
-        ReactDOM.render(<User data={this.state.githubData} />, document.getElementById('content__container'));
+        ReactDOM.render(<User data={this.state.githubData} />, document.getElementById('app-content'));
       }, () => {
         this.setState({
           requestFailed: true
@@ -46,17 +47,18 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="search_container">
-        <form className="search_container__form" onSubmit={this.handleSubmit}>
-          <label>
-            <span className="search_container__label"> FindHub </span>
-            <input type="text" name="username" className="search_container__input" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" className="search_container__submit" />
+      <div className="search  container">
+        <form className="search__form" onSubmit={this.handleSubmit}>
+          <div className="search__input-holder">
+            <input type="text" name="username" placeholder="Type a GitHub username" required className="search__input" value={this.state.value} onChange={this.handleChange} />
+            <button type="submit" value="Submit" className="search__submit">
+              <img src={searchIcon} alt="logo" />
+            </button>
+          </div>
         </form>
       </div>
     );
   }
 }
 
-export default Header;
+export default Search;
