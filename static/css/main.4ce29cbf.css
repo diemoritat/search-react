@@ -1,0 +1,429 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito|Open+Sans:300,400,700);.left {
+  text-align: left; }
+
+.right {
+  text-align: right; }
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; }
+
+.justify {
+  text-align: justify; }
+
+.hidden-sm {
+  display: none; }
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
+  @media only screen and (min-width: 33.75em) {
+    .container {
+      width: 80%; } }
+  @media only screen and (min-width: 60em) {
+    .container {
+      width: 75%;
+      max-width: 60rem; } }
+
+.row {
+  position: relative;
+  width: 100%; }
+
+.row [class^="col"] {
+  float: left;
+  margin: 0.5rem 2%;
+  min-height: 0.125rem; }
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  width: 96%; }
+
+.col-1-sm {
+  width: 4.33333%; }
+
+.col-2-sm {
+  width: 12.66667%; }
+
+.col-3-sm {
+  width: 21%; }
+
+.col-4-sm {
+  width: 29.33333%; }
+
+.col-5-sm {
+  width: 37.66667%; }
+
+.col-6-sm {
+  width: 46%; }
+
+.col-7-sm {
+  width: 54.33333%; }
+
+.col-8-sm {
+  width: 62.66667%; }
+
+.col-9-sm {
+  width: 71%; }
+
+.col-10-sm {
+  width: 79.33333%; }
+
+.col-11-sm {
+  width: 87.66667%; }
+
+.col-12-sm {
+  width: 96%; }
+
+@media only screen and (min-width: 45em) {
+  .col-1 {
+    width: 4.33333%; }
+  .col-2 {
+    width: 12.66667%; }
+  .col-3 {
+    width: 21%; }
+  .col-4 {
+    width: 29.33333%; }
+  .col-5 {
+    width: 37.66667%; }
+  .col-6 {
+    width: 46%; }
+  .col-7 {
+    width: 54.33333%; }
+  .col-8 {
+    width: 62.66667%; }
+  .col-9 {
+    width: 71%; }
+  .col-10 {
+    width: 79.33333%; }
+  .col-11 {
+    width: 87.66667%; }
+  .col-12 {
+    width: 96%; }
+  .hidden-sm {
+    display: block; } }
+
+/*------------------------------------*    $VARIABLES
+\*------------------------------------*/
+/*------------------------------------*    $ BASIC DESIGNS AND IMPORTS
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.search {
+  padding: 1.5rem 0;
+  text-align: center;
+  margin-bottom: 0.75rem; }
+  .search__form {
+    padding: 1.5rem;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px 0px #E0E0E0; }
+  .search__label {
+    display: block;
+    padding-bottom: 0.375rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem; }
+  .search__input {
+    width: 90%;
+    border: 0;
+    background-color: transparent; }
+    .search__input:focus {
+      outline: 0;
+      border-color: #129FEA; }
+    .search__input:-webkit-autofill {
+      background-color: #fff !important;
+      color: inherit; }
+  .search__input-holder {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    border-radius: 0.375rem;
+    box-shadow: inset 0 1px 3px #ddd;
+    box-sizing: border-box;
+    padding: 0.375rem 0.75rem; }
+  .search__submit {
+    background-color: transparent;
+    border: 0;
+    height: 1.5rem; }
+    .search__submit img {
+      max-height: 100%; }
+
+.user {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 2px 2px 5px 0px #E0E0E0;
+  display: grid;
+  grid-template-columns: 100%;
+  margin-top: 0.75rem; }
+  @media only screen and (min-width: 45em) {
+    .user {
+      grid-template-columns: 30% 70%;
+      margin-top: 3rem; } }
+  @media only screen and (min-width: 60em) {
+    .user {
+      grid-template-columns: 25% 75%; } }
+  .user__image {
+    grid-column: 1;
+    grid-row: 1;
+    display: inline-block; }
+    .user__image img {
+      margin-top: -1.5rem;
+      margin-bottom: 1.5rem;
+      width: 50%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      height: auto; }
+      @media only screen and (min-width: 45em) {
+        .user__image img {
+          width: 100%;
+          margin-left: 1.5rem; } }
+  .user__info {
+    grid-column: 1;
+    grid-row: 2;
+    display: inline-block;
+    padding: 1.5rem 0.75rem; }
+    @media only screen and (min-width: 45em) {
+      .user__info {
+        grid-column: 2;
+        grid-row: 1;
+        margin-left: 0.75rem;
+        padding: 1.5rem; } }
+    .user__info--top {
+      text-align: center;
+      margin-bottom: 0.75rem; }
+    .user__info--bottom {
+      grid-row: 2;
+      grid-column: 1 / 2;
+      text-align: center;
+      margin-bottom: 1.5rem; }
+    .user__info--count {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      margin-bottom: 0.75rem; }
+  .user__name {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+    padding-bottom: 0.75rem; }
+  .user__divider {
+    width: 50%;
+    height: 1px;
+    display: block;
+    background-color: #e2e2e2;
+    margin: 20px auto 25px; }
+  .user__stats {
+    padding: 0 0.75rem;
+    border-right: 1px solid #e2e2e2;
+    color: #becad5; }
+    .user__stats:last-child {
+      border-right: 0; }
+    .user__stats span {
+      display: block;
+      font-weight: 700;
+      font-size: 1.2rem; }
+  .user__additional-info {
+    width: 100%;
+    grid-row: 3; }
+    @media only screen and (min-width: 45em) {
+      .user__additional-info {
+        grid-column: 1 / 3; } }
+  .user__tablist {
+    display: grid;
+    grid-template-columns: 100%; }
+    @media only screen and (min-width: 45em) {
+      .user__tablist {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row: 2; } }
+  @media only screen and (min-width: 45em) {
+    .user .tab__repositories {
+      grid-column: 1; } }
+  @media only screen and (min-width: 45em) {
+    .user .tab__starred {
+      grid-column: 2; } }
+  .user .tab__content {
+    background-color: #fff; }
+    @media only screen and (min-width: 45em) {
+      .user .tab__content {
+        grid-row: 2;
+        z-index: 0;
+        border-right: 1px solid #e2e2e2; }
+        .user .tab__content:first-child {
+          border-right: 0; }
+        .user .tab__content.active {
+          z-index: 1; } }
+  .user__tab {
+    display: inline-block;
+    padding: 0.75rem;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    text-align: center; }
+    @media only screen and (min-width: 45em) {
+      .user__tab {
+        border-right: 1px solid #e2e2e2;
+        cursor: pointer;
+        transition: all 0.2s linear; }
+        .user__tab:last-child {
+          border-right: 0; }
+        .user__tab:hover {
+          background-color: #becad5;
+          transition: all 0.3s linear;
+          color: #fff; }
+        .user__tab.active {
+          background-color: #becad5;
+          color: #fff; } }
+    .user__tab--active {
+      background-color: #e2e2e2; }
+
+.list__content {
+  padding: 0.75rem 1.5rem 1.5rem; }
+
+.list__item {
+  padding: 1.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #e2e2e2; }
+  .list__item:last-child {
+    margin-bottom: 0;
+    border-bottom: 0; }
+  .list__item-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding-bottom: 0.375rem; }
+  .list__item-url {
+    font-size: 0.75rem;
+    display: block;
+    padding-bottom: 0.375rem; }
+  .list__item-tag {
+    border: 1px solid #becad5;
+    color: #becad5;
+    padding: 2px 5px;
+    display: inline; }
+
+.footer {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 1.5rem; }
+  .footer__copyright {
+    text-align: center;
+    padding: 0.75rem 0; }
+    .footer__copyright p {
+      font-size: .7rem; }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%; }
+
+body {
+  background-color: #f3f3f3; }
+
+* {
+  font-family: "Open Sans", sans-serif;
+  color: #333447;
+  line-height: 1.125rem; }
+
+.page-root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+main {
+  flex: 1; }
+
+.content__container {
+  margin: 1.5rem auto; }
+
+/*------------------------------------*    $ BASIC FONT STYLING
+\*------------------------------------*/
+p {
+  font-weight: 300;
+  line-height: 1.125rem;
+  font-size: 0.75rem; }
+
+h1 {
+  font-size: 2.5rem; }
+
+h2 {
+  font-size: 2rem; }
+
+h3 {
+  font-size: 1.375rem; }
+
+h4 {
+  font-size: 1.125rem; }
+
+.error {
+  text-align: center;
+  font-weight: 700;
+  color: #de0000; }
+
+/*# sourceMappingURL=main.4ce29cbf.css.map*/
