@@ -26,22 +26,29 @@ class Search extends Component {
     fetch(`https://api.github.com/users/${this.state.value}`)
       .then(response => {
         if (!response.ok) {
-          throw Error("Network request failed")
+          throw Error("Network request failed");
         }
-        return response
+
+        ReactDOM.render((
+          <p className="error">Network request failed.</p>
+        ), document.getElementById('app-content'));
+
+        return response;
       })
       .then(data => data.json())
       .then(data => {
         this.setState({
           githubData: data
         });
-        console.log(data);
 
         ReactDOM.render(<User githubData={this.state.githubData} />, document.getElementById('app-content'));
       }, () => {
         this.setState({
           requestFailed: true
-        })
+        });
+        ReactDOM.render((
+          <p className="error">User not found! </p>
+        ), document.getElementById('app-content'));
     })
   }
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Nunito|Open+Sans:300,400,700');
 
 /*------------------------------------*\
     $VARIABLES
@@ -15,6 +15,7 @@ $medium-gray: #becad5;
 $light-gray: #e2e2e2;
 $light-blue: #c3d4e2;
 $extra-light-blue: #dbe6ff;
+$red: #de0000;
 
 $font-family: 'Open Sans', sans-serif;
 $font-weight-light: 300;
@@ -90,4 +91,10 @@ h3 {
 
 h4 {
   font-size: 1.125rem;
+}
+
+.error {
+  text-align: center;
+  font-weight: $font-weight-heavy;
+  color: $red;
 }

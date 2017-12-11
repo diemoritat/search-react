@@ -104,11 +104,15 @@
   &__additional-info {
     width: 100%;
     grid-row: 3;
-    grid-column: 1 / 3;
+
+    @media only screen and (min-width: $breakpoint-med) {
+      grid-column: 1 / 3;
+    }
   }
 
   &__tablist {
     display: grid;
+    grid-template-columns: 100%;
 
     @media only screen and (min-width: $breakpoint-med) {
       grid-template-columns: repeat(2, 1fr);
@@ -116,10 +120,42 @@
     }
   }
 
+  .tab__repositories {
+    @media only screen and (min-width: $breakpoint-med) {
+      grid-column: 1;
+    }
+  }
+
+  .tab__starred {
+    @media only screen and (min-width: $breakpoint-med) {
+      grid-column: 2;
+    }
+  }
+
+  .tab__content {
+    background-color: $white;
+
+    @media only screen and (min-width: $breakpoint-med) {
+      //grid-column: 1 / 3;
+      grid-row: 2;
+      z-index: 0;
+      border-right: 1px solid $light-gray;
+
+      &:first-child {
+        border-right: 0;
+      }
+
+      &.active {
+        z-index: 1;
+      }
+    }
+  }
+
   &__tab {
     display: inline-block;
     padding: baseline(1);
     border-top: 1px solid $light-gray;
+    border-bottom: 1px solid $light-gray;
     text-align: center;
 
     @media only screen and (min-width: $breakpoint-med) {
@@ -136,10 +172,53 @@
         transition: all 0.3s linear;
         color: $white;
       }
+
+      &.active {
+        background-color: $medium-gray;
+        color: $white;
+      }
     }
 
     &--active {
       background-color: $light-gray;
+    }
+  }
+}
+
+.list {
+
+  &__content {
+    padding: baseline(1) baseline(2) baseline(2);
+  }
+
+  &__item {
+    padding: baseline(2) baseline(1);
+    margin-bottom: baseline(1);
+    border-bottom: 1px solid $light-gray;
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    &-title{
+      font-size: baseline(1.5);
+      font-weight: $font-weight-heavy;
+      padding-bottom: baseline(.5);
+    }
+
+    &-url{
+      font-size: baseline(1);
+      display: block;
+      padding-bottom: baseline(.5);
+    }
+
+    &-tag{
+      //background-color: $light-gray;
+      border: 1px solid $medium-gray;
+      color: $medium-gray;
+      padding: 2px 5px;
+      display: inline;
     }
   }
 }

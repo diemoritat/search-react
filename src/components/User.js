@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 class User extends Component {
 
@@ -7,8 +8,8 @@ class User extends Component {
 
     this.username = this.props.githubData.login;
 
-    this.showRepos = this.showRepos.bind(this, this.username);
-    this.showStarred = this.showStarred.bind(this, this.username);
+    this.showRepos = this.showRepos.bind(this);
+    this.showStarred = this.showStarred.bind(this);
   }
 
   showRepos(event) {
@@ -27,13 +28,21 @@ class User extends Component {
           repositoriesData: data
         });
 
-        console.log(this.state.repositoriesData);
+        ReactDOM.render((
+            <ul className="list__content">
+              {this.state.repositoriesData.map((repo) =>
+                <li key={repo.id} className="list__item">
+                  <p className="list__item-title">{repo.name}</p>
+                  <a href="{repo.html_url}" target="_blank" className="list__item-url">{repo.html_url}</a>
+                  {repo.language != null &&
+                    <p className="list__item-tag">{repo.language}</p>}
+                </li>
+              )}
+            </ul>
+        ), document.getElementById('tab__repo-content'));
 
-        // ReactDOM.render(
-        //   <RepoList data={this.state.repositoriesData} />
-        // , document.getElementById('tab__content'));
-
-        //ReactDOM.render(<User data={this.state.githubData} />, document.getElementById('app-content'));
+        document.getElementById('tab__repo-content').classList.add('active');
+        document.getElementById('tab__repo').classList.add('active');
       }, () => {
         this.setState({
           requestFailed: true
@@ -56,9 +65,22 @@ class User extends Component {
         this.setState({
           starredData: data
         });
-        console.log(data);
 
-        //ReactDOM.render(<User data={this.state.githubData} />, document.getElementById('app-content'));
+        ReactDOM.render((
+            <ul className="list__content">
+              {this.state.starredData.map((starred) =>
+                <li key={starred.id} className="list__item">
+                  <p className="list__item-title">{starred.name}</p>
+                  <a href="{starred.html_url}" target="_blank" className="list__item-url">{starred.html_url}</a>
+                  {starred.language != null &&
+                    <p className="list__item-tag">{starred.language}</p>}
+                </li>
+              )}
+            </ul>
+        ), document.getElementById('tab__starred-content'));
+
+        document.getElementById('tab__starred-content').classList.add('active');
+        document.getElementById('tab__starred').classList.add('active');
       }, () => {
         this.setState({
           requestFailed: true
@@ -104,16 +126,20 @@ class User extends Component {
 
         <div className="user__additional-info">
           <div className="user__tablist">
-            <div className="user__tab" onClick={this.showRepos}>See Repos
+            <div className="user__tab  tab__repositories" id="tab__repo" onClick={this.showRepos}>See Repos
               <span className="user__tab-icon"></span>
             </div>
-            <div className="user__tab" onClick={this.showStarred}>See Starred
-              <span className="user__tab-icon"></span>
-            </div>
-          </div>
-          <div className="user__tabpanel" id="tab__content">
+            <div className="tab__content tab__repositories-content" id="tab__repo-content">
 
+            </div>
+            <div className="user__tab  tab__starred" id="tab__starred" onClick={this.showStarred}>See Starred
+              <span className="user__tab-icon"></span>
+            </div>
+            <div className="tab__content tab__starred-content" id="tab__starred-content">
+
+            </div>
           </div>
+
         </div>
       </div>
     );
