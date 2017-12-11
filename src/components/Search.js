@@ -13,8 +13,8 @@ class Search extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
 
+  }
 
   handleChange(event) {
     this.setState({value: event.target.value});
@@ -37,7 +37,7 @@ class Search extends Component {
         });
         console.log(data);
 
-        ReactDOM.render(<User data={this.state.githubData} />, document.getElementById('app-content'));
+        ReactDOM.render(<User githubData={this.state.githubData} />, document.getElementById('app-content'));
       }, () => {
         this.setState({
           requestFailed: true
@@ -50,7 +50,7 @@ class Search extends Component {
       <div className="search  container">
         <form className="search__form" onSubmit={this.handleSubmit}>
           <div className="search__input-holder">
-            <input type="text" name="username" placeholder="Type a GitHub username" required className="search__input" value={this.state.value} onChange={this.handleChange} />
+            <input type="text" id="username" name="username" placeholder="Type a GitHub username" required className="search__input" value={this.state.value} onChange={this.handleChange} />
             <button type="submit" value="Submit" className="search__submit">
               <img src={searchIcon} alt="logo" />
             </button>
